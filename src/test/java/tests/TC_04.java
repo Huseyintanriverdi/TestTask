@@ -5,7 +5,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DefaultPage;
-import pages.LogOutPage;
 import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -13,7 +12,6 @@ import utilities.Driver;
 public class TC_04 {
     LoginPage logInPage = new LoginPage();
     DefaultPage defaultPage=new DefaultPage();
-    LogOutPage logOutPage=new LogOutPage();
 
     @Test(priority = 1)
     public void hospitalRunPage() {
