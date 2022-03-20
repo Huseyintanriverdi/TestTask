@@ -2,12 +2,14 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.UIPage;
+import pages.DefaultPage;
+import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 public class TC_01  {
-    UIPage logInPage = new UIPage();
+    DefaultPage defaultPage = new DefaultPage();
+    LoginPage logInPage=new LoginPage();
 
     @Test(priority = 1)
     public void hospitalRunPage() {
@@ -16,17 +18,17 @@ public class TC_01  {
 
     @Test(priority = 2)
     public void correctUsername() {
-    logInPage.usernameBox.sendKeys(ConfigReader.getProperty("username"));
+    defaultPage.usernameBox.sendKeys(ConfigReader.getProperty("username"));
     }
 
     @Test(priority = 3)
     public void correctPassword() {
-        logInPage.passwordBox.sendKeys(ConfigReader.getProperty("password"));
+        defaultPage.passwordBox.sendKeys(ConfigReader.getProperty("password"));
     }
 
     @Test(priority = 4)
     public void clickSignInButton() throws InterruptedException {
-        logInPage.signInButton.click();
+        defaultPage.signInButton.click();
         Thread.sleep(15000);
         Assert.assertTrue(logInPage.patientListingText.isDisplayed());
         logInPage.cogWheelIcon.click();

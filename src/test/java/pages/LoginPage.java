@@ -5,19 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class UIPage {
-    public UIPage(){
+public class LoginPage {
+    public LoginPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-    @FindBy(id="identification")
-    public WebElement usernameBox;
-
-    @FindBy(id="password")
-    public WebElement passwordBox;
-
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement signInButton;
 
     @FindBy(xpath ="//a[@class='settings-trigger ']")
     public WebElement cogWheelIcon;
@@ -73,7 +64,5 @@ public class UIPage {
     @FindBy(tagName = "h1")
     public WebElement medicationRequestText;
 
-    @FindBy(tagName = "h2")
-    public WebElement pleaseSignInText;
 
 }
